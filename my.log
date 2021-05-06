@@ -1,0 +1,341 @@
+2021-05-06 14:19:46.566  INFO 8032 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 8032 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:19:46.567  INFO 8032 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:19:46.900  INFO 8032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:19:46.906  INFO 8032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:19:47.087  INFO 8032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:19:47.090  INFO 8032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:19:47.090  INFO 8032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:19:47.122  INFO 8032 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:19:47.123  INFO 8032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 543 ms
+2021-05-06 14:19:47.175  INFO 8032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:19:47.188  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-05-06 14:19:47.265  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-05-06 14:19:47.267  INFO 8032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:19:47.448  INFO 8032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:19:47.452  INFO 8032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:19:47.469  INFO 8032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:19:47.475  WARN 8032 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propostaController' defined in file [C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes\br\com\zupacademy\proposta\proposta\PropostaController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [br.com.zupacademy.proposta.proposta.PropostaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+2021-05-06 14:19:47.475  INFO 8032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:19:47.476  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-05-06 14:19:47.509  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-05-06 14:19:47.511  INFO 8032 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-05-06 14:19:47.518  INFO 8032 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-05-06 14:19:47.523 ERROR 8032 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propostaController' defined in file [C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes\br\com\zupacademy\proposta\proposta\PropostaController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [br.com.zupacademy.proposta.proposta.PropostaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1316) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.com.zupacademy.proposta.PropostaApplication.main(PropostaApplication.java:13) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.5.jar:2.4.5]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [br.com.zupacademy.proposta.proposta.PropostaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:225) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 23 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+	at br.com.zupacademy.proposta.proposta.PropostaController.<init>(PropostaController.java:31) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:212) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 25 common frames omitted
+
+2021-05-06 14:19:56.191  INFO 8032 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 8032 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:19:56.191  INFO 8032 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:19:56.354  INFO 8032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:19:56.357  INFO 8032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:19:56.447  INFO 8032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:19:56.448  INFO 8032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:19:56.449  INFO 8032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:19:56.480  INFO 8032 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:19:56.480  INFO 8032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 286 ms
+2021-05-06 14:19:56.518  INFO 8032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:19:56.523  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-05-06 14:19:56.547  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-05-06 14:19:56.548  INFO 8032 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:19:56.596  INFO 8032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:19:56.596  INFO 8032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:19:56.601  INFO 8032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:19:56.604  WARN 8032 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propostaController' defined in file [C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes\br\com\zupacademy\proposta\proposta\PropostaController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [br.com.zupacademy.proposta.proposta.PropostaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+2021-05-06 14:19:56.604  INFO 8032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:19:56.604  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-05-06 14:19:56.606  INFO 8032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-05-06 14:19:56.606  INFO 8032 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-05-06 14:19:56.609  INFO 8032 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-05-06 14:19:56.613 ERROR 8032 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'propostaController' defined in file [C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes\br\com\zupacademy\proposta\proposta\PropostaController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [br.com.zupacademy.proposta.proposta.PropostaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1316) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.com.zupacademy.proposta.PropostaApplication.main(PropostaApplication.java:13) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.5.jar:2.4.5]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [br.com.zupacademy.proposta.proposta.PropostaController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:225) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.3.6.jar:5.3.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 23 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	CPFouCNPJValidator cannot be resolved to a type
+	CPFouCNPJValidator cannot be resolved to a type
+
+	at br.com.zupacademy.proposta.proposta.PropostaController.<init>(PropostaController.java:31) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:212) ~[spring-beans-5.3.6.jar:5.3.6]
+	... 25 common frames omitted
+
+2021-05-06 14:20:15.131  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:20:15.133  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:20:15.178  INFO 11096 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-06 14:20:15.179  INFO 11096 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-06 14:20:15.799  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:20:15.815  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:20:16.573  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:20:16.590  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:20:16.591  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:20:16.701  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:20:16.701  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1522 ms
+2021-05-06 14:20:16.873  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:20:16.949  INFO 11096 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2021-05-06 14:20:17.138  INFO 11096 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-06 14:20:17.247  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-06 14:20:17.704  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-06 14:20:17.722  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:20:18.406  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:20:18.413  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:20:18.425  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:20:18.504  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:20:18.609  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:20:18.835  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:20:18.843  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 4.096 seconds (JVM running for 4.529)
+2021-05-06 14:25:25.886  INFO 11096 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:25:25.888  INFO 11096 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:25:25.893  INFO 11096 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-06 14:25:25.909  INFO 11096 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-06 14:25:26.011  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:25:26.012  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:25:26.250  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:25:26.253  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:25:26.361  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:25:26.362  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:25:26.363  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:25:26.383  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:25:26.384  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 369 ms
+2021-05-06 14:25:26.418  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:25:26.422  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-05-06 14:25:26.443  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-05-06 14:25:26.444  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:25:26.489  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:25:26.489  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:25:26.494  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:25:26.537  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:25:26.574  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:25:26.637  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:25:26.641  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 0.661 seconds (JVM running for 312.327)
+2021-05-06 14:25:26.644  INFO 11096 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-06 14:25:40.509  INFO 11096 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:25:40.510  INFO 11096 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:25:40.511  INFO 11096 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-05-06 14:25:40.519  INFO 11096 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-05-06 14:25:40.590  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:25:40.590  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:25:40.727  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:25:40.730  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:25:40.820  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:25:40.821  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:25:40.821  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:25:40.840  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:25:40.841  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 248 ms
+2021-05-06 14:25:40.865  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:25:40.869  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-05-06 14:25:40.887  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-05-06 14:25:40.888  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:25:40.924  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:25:40.925  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:25:40.931  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:25:40.959  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:25:40.982  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:25:41.024  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:25:41.031  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 0.465 seconds (JVM running for 326.716)
+2021-05-06 14:25:41.031  INFO 11096 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-06 14:26:36.128  INFO 11096 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:26:36.130  INFO 11096 --- [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:26:36.131  INFO 11096 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-05-06 14:26:36.137  INFO 11096 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-05-06 14:26:36.216  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:26:36.216  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:26:36.356  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:26:36.360  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:26:36.437  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:26:36.438  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:26:36.438  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:26:36.460  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:26:36.460  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 242 ms
+2021-05-06 14:26:36.491  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:26:36.495  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-05-06 14:26:36.513  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-05-06 14:26:36.514  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:26:36.562  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:26:36.562  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:26:36.568  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:26:36.602  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:26:36.625  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:26:36.673  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:26:36.677  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 0.488 seconds (JVM running for 382.362)
+2021-05-06 14:26:36.678  INFO 11096 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-06 14:27:49.256  INFO 11096 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:27:49.257  INFO 11096 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:27:49.259  INFO 11096 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-05-06 14:27:49.265  INFO 11096 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-05-06 14:27:49.361  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:27:49.362  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:27:49.508  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:27:49.512  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:27:49.614  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:27:49.614  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:27:49.614  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:27:49.634  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:27:49.634  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 270 ms
+2021-05-06 14:27:49.659  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:27:49.662  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-05-06 14:27:49.679  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-05-06 14:27:49.680  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:27:49.720  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:27:49.721  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:27:49.725  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:27:49.756  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:27:49.776  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:27:49.824  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:27:49.827  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 0.492 seconds (JVM running for 455.513)
+2021-05-06 14:27:49.828  INFO 11096 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-06 14:30:03.364  INFO 11096 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 14:30:03.365  INFO 11096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 14:30:03.368  INFO 11096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-05-06 14:30:03.764  INFO 11096 --- [http-nio-8080-exec-2] br.com.zupacademy.proposta.shared.Log    : Proposta crida
+2021-05-06 14:30:15.625  INFO 11096 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:30:15.626  INFO 11096 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:30:15.627  INFO 11096 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-05-06 14:30:15.631  INFO 11096 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-05-06 14:30:15.756  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:30:15.757  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:30:15.948  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:30:15.953  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:30:16.054  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:30:16.056  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:30:16.056  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:30:16.080  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:30:16.080  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 319 ms
+2021-05-06 14:30:16.114  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:30:16.119  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-05-06 14:30:16.143  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-05-06 14:30:16.143  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:30:16.192  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:30:16.192  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:30:16.197  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:30:16.226  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:30:16.242  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:30:16.278  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:30:16.281  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 0.557 seconds (JVM running for 601.966)
+2021-05-06 14:30:16.281  INFO 11096 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-06 14:30:18.068  INFO 11096 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 14:30:18.068  INFO 11096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 14:30:18.069  INFO 11096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-06 14:30:27.022  INFO 11096 --- [Thread-28] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:30:27.023  INFO 11096 --- [Thread-28] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:30:27.024  INFO 11096 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-05-06 14:30:27.028  INFO 11096 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-05-06 14:30:27.118  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Starting PropostaApplication using Java 15.0.2 on ZUP-6235 with PID 11096 (C:\Users\Jose\Desktop\Nova pasta\proposta\target\classes started by Jose in C:\Users\Jose\Desktop\Nova pasta\proposta)
+2021-05-06 14:30:27.118  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : No active profile set, falling back to default profiles: default
+2021-05-06 14:30:27.267  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-06 14:30:27.271  INFO 11096 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-05-06 14:30:27.472  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-05-06 14:30:27.475  INFO 11096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-06 14:30:27.475  INFO 11096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-06 14:30:27.521  INFO 11096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-06 14:30:27.522  INFO 11096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 402 ms
+2021-05-06 14:30:27.547  INFO 11096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-06 14:30:27.551  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-05-06 14:30:27.570  INFO 11096 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-05-06 14:30:27.570  INFO 11096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-05-06 14:30:27.611  INFO 11096 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-06 14:30:27.611  INFO 11096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-06 14:30:27.619  INFO 11096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-06 14:30:27.646  WARN 11096 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-06 14:30:27.671  INFO 11096 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-06 14:30:27.717  INFO 11096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-06 14:30:27.721  INFO 11096 --- [restartedMain] b.c.z.proposta.PropostaApplication       : Started PropostaApplication in 0.631 seconds (JVM running for 613.407)
+2021-05-06 14:30:27.723  INFO 11096 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-06 14:30:30.860  INFO 11096 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-06 14:30:30.860  INFO 11096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-06 14:30:30.861  INFO 11096 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-06 14:30:30.885  INFO 11096 --- [http-nio-8080-exec-2] br.com.zupacademy.proposta.shared.Log    : Proposta crida
