@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
@@ -23,11 +24,12 @@ public class ErroDeValidacaoHandler {
 	@Autowired
 	private MessageSource messageSource;
 	
-	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
+	//@ResponseStatus(code = HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class) 
-	public List<ErroFormulario> handle(MethodArgumentNotValidException exception) {
+	public List<ErroFormulario> handle(MethodArgumentNotValidException exception, HttpServletResponse response) {
 		
-		List<ErroFormulario> listaErros = new ArrayList<>();
+		List<ErroFormulario> listaErros400 = new ArrayList<>();
+		List<ErroFormulario> listaErros422 = new ArrayList<>();
 		
 		List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
 		
@@ -35,10 +37,21 @@ public class ErroDeValidacaoHandler {
 			
 			String mensagem = messageSource.getMessage(e, LocaleContextHolder.getLocale());
 			ErroFormulario erroFormulario = new ErroFormulario(e.getField(), mensagem);
-			listaErros.add(erroFormulario);
+			
+			if(e.getCode().equals("UniqueValue")) {
+				listaErros422.add(erroFormulario);
+			} else {
+				listaErros400.add(erroFormulario);
+			}
 		});
 		
-		return listaErros;
+		if(!listaErros422.isEmpty()) {
+			response.setStatus(422);
+			return listaErros422;
+		} else {
+			response.setStatus(400);
+			return listaErros400;
+		}
 	}
 	
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
