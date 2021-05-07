@@ -3,6 +3,8 @@ package br.com.zupacademy.proposta.proposta;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,6 +35,9 @@ public class Proposta {
 	
 	@NotNull @Positive
 	private BigDecimal salario;
+	
+	@Enumerated(EnumType.STRING)
+	private EstadoProposta estado;
 	
 	@Deprecated
 	public Proposta() {}
@@ -70,5 +75,12 @@ public class Proposta {
 		return salario;
 	}
 	
-	
+	/**
+	 * Para alterar o estado da proposta após a solicitação da
+	 * análise fincaneira
+	 * @param estado
+	 */
+	public void setEstado(EstadoProposta estado) {
+		this.estado = estado;
+	}
 }

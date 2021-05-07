@@ -1,6 +1,8 @@
-package br.com.zupacademy.proposta.proposta;
+package br.com.zupacademy.proposta.proposta.controller;
 
 import java.math.BigDecimal;
+
+import br.com.zupacademy.proposta.proposta.Proposta;
 
 public class PropostaResponse {
 	

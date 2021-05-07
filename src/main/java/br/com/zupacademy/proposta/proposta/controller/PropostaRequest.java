@@ -1,4 +1,4 @@
-package br.com.zupacademy.proposta.proposta;
+package br.com.zupacademy.proposta.proposta.controller;
 
 import java.math.BigDecimal;
 
@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
+import br.com.zupacademy.proposta.proposta.Proposta;
+import br.com.zupacademy.proposta.proposta.ValidaCPFOuCNPJ;
 import br.com.zupacademy.proposta.shared.validators.UniqueValue;
 
 public class PropostaRequest {

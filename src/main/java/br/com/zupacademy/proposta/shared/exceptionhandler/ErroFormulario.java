@@ -1,4 +1,4 @@
-package br.com.zupacademy.proposta.shared;
+package br.com.zupacademy.proposta.shared.exceptionhandler;
 
 public class ErroFormulario {
 	
