@@ -7,8 +7,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
-@SpringBootApplication
 @EnableFeignClients
+@SpringBootApplication
 public class PropostaApplication {
 
 	public static void main(String[] args) {

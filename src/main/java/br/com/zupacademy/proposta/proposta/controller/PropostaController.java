@@ -74,7 +74,7 @@ public class PropostaController {
 			
 		Proposta proposta = manager.find(Proposta.class, Long.valueOf(id));
 		
-		if(proposta.equals(null)) {
+		if(proposta == null) {
 			return ResponseEntity.notFound().build();
 		} else {
 			return ResponseEntity.ok(new PropostaResponse(proposta));
