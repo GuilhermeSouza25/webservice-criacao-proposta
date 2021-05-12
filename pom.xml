@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.zupacademy</groupId>
-	<artifactId>proposta</artifactId>
+	<artifactId>propostas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>webservice_proposta</name>
 	<description>microserviço de criação de propostas</description>

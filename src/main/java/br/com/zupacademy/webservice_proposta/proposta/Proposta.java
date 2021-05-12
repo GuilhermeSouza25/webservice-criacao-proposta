@@ -77,6 +77,10 @@ public class Proposta {
 		return salario;
 	}
 	
+	public EstadoProposta getEstado() {
+		return estado;
+	}
+	
 	/**
 	 * Para atrelar o cartão à proposta depois do retorno
 	 * do sistema de cartão.

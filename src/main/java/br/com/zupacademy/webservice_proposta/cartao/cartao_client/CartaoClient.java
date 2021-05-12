@@ -10,6 +10,6 @@ import br.com.zupacademy.webservice_proposta.proposta.analisefinanceira_client.S
 @FeignClient(name = "cartao", url = "${cartoes.url}")
 public interface CartaoClient {
 	
-	@RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, path = "/api/cartoes", consumes = "application/json")
 	CartaoResponse solicitaCartao(@RequestBody SolicitacaoAnalise solicitacaoAnalise);
 }

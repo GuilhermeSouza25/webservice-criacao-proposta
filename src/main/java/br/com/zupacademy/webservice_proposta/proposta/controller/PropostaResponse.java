@@ -2,6 +2,7 @@ package br.com.zupacademy.webservice_proposta.proposta.controller;
 
 import java.math.BigDecimal;
 
+import br.com.zupacademy.webservice_proposta.proposta.EstadoProposta;
 import br.com.zupacademy.webservice_proposta.proposta.Proposta;
 
 public class PropostaResponse {
@@ -16,12 +17,15 @@ public class PropostaResponse {
 	
 	private BigDecimal salario;
 	
+	private EstadoProposta estado;
+	
 	public PropostaResponse(Proposta proposta) {
 		this.documento = proposta.getDocumento();
 		this.email = proposta.getEmail();
 		this.nome = proposta.getNome();
 		this.endereco = proposta.getEndereco();
 		this.salario = proposta.getSalario();
+		this.estado = proposta.getEstado();
 	}
 
 	public String getDocumento() {
@@ -44,5 +48,7 @@ public class PropostaResponse {
 		return salario;
 	}
 	
-	
+	public EstadoProposta getEstado() {
+		return estado;
+	}
 }

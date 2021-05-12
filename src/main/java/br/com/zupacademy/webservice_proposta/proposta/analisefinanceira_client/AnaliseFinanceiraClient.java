@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "analiseFinanceira", url = "${analisefinanceira.url}")
 public interface AnaliseFinanceiraClient {
 	
-	@RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+	@RequestMapping(method = RequestMethod.POST, path = "/api/solicitacao", consumes = "application/json")
 	ResultadoAnalise solicitaAnalise(@RequestBody SolicitacaoAnalise solicitacaoAnalise);
 }
