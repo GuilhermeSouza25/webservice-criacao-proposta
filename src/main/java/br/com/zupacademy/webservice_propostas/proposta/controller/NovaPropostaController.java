@@ -36,7 +36,7 @@ public class NovaPropostaController {
 	
 	private final Logger logger = LoggerFactory.getLogger(Log.class);
 	
-	@PostMapping("/proposta/nova")
+	@PostMapping("/propostas")
 	public ResponseEntity<?> cadastrar(
 			@RequestBody @Valid PropostaRequest propostaRequest,
 			UriComponentsBuilder uriBuilder) {

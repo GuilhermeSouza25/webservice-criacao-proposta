@@ -22,6 +22,7 @@ public class Biometria {
 	@NotEmpty
 	private String biometria;
 	
+	@SuppressWarnings("unused")
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
 	@NotNull

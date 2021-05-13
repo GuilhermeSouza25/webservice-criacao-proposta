@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class BiometriaController {
 	@Autowired SmartValidator validator;
 	@PersistenceContext EntityManager manager;
 	
-	@PostMapping("/biometria/{cartaoId}")
+	@PostMapping("/cartoes/{cartaoId}/biometrias")
 	@Transactional
 	public ResponseEntity<?> cadastrar(
 			@RequestBody @Valid BiometriaRequest biometriaRequest,
