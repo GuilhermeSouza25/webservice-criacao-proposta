@@ -44,6 +44,10 @@ public class CartaoResponse {
 		this.vencimento = vencimento;
 	}
 	
+	public String getId() {
+		return id;
+	}
+	
 	public String getIdProposta() {
 		return idProposta;
 	}

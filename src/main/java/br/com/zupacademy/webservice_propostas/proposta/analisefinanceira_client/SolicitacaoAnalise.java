@@ -5,8 +5,8 @@ import javax.validation.constraints.NotBlank;
 import br.com.zupacademy.webservice_propostas.proposta.Proposta;
 
 /**
- * Esta classe é usada para representar tanto uma solicitação de
- * análise financeira, como uma solicitação de novo cartão.
+ * Esta classe é usada para representar uma solicitação de
+ * análise financeira.
  * @author Jose
  */
 public class SolicitacaoAnalise {

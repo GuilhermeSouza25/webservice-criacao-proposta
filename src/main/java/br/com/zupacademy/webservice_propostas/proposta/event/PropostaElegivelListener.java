@@ -24,13 +24,13 @@ public class PropostaElegivelListener implements ApplicationListener<PropostaEle
 		System.out.println("Escutou o evento...");
 		System.out.println(event.getMessage());
 		
-		CartaoResponse cartaoResponse = cartaoClient.solicitaCartao(event.getAnaliseRequest());
-		
-		Cartao cartao = cartaoResponse.converter();
-		
-		Proposta proposta = manager.find(Proposta.class, Long.valueOf(cartaoResponse.getIdProposta()));
-		proposta.associarCartao(cartao);
-		
-		transacao.atualizaEComita(proposta);
+//		CartaoResponse cartaoResponse = cartaoClient.solicitaCartao(event.getAnaliseRequest());
+//		
+//		Cartao cartao = cartaoResponse.converter();
+//		
+//		Proposta proposta = manager.find(Proposta.class, Long.valueOf(cartaoResponse.getIdProposta()));
+//		proposta.associarCartao(cartao);
+//		
+//		transacao.atualizaEComita(proposta);
 	}
 }

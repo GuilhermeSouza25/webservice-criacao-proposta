@@ -21,9 +21,8 @@ public class DetalhaPropostaController {
 	
 	@GetMapping("/propostas/{id}") 
 	public	 ResponseEntity<?> detalhar(
-			@Pattern(regexp = "[\\s]*[0-9]*[1-9]+",message="ID da proposta inválido. Informe um valor numérico positivo")
-			@PathVariable("id") 
-			String id) {
+			//@Pattern(regexp = "[\\s]*[0-9]*[1-9]+",message="ID da proposta inválido. Informe um valor numérico positivo")
+			@PathVariable("id") Long id) {
 			
 		Proposta proposta = manager.find(Proposta.class, Long.valueOf(id));
 		
