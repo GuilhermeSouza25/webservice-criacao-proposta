@@ -24,6 +24,7 @@ import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.
 import br.com.zupacademy.webservice_propostas.shared.ExecutorTransacao;
 import br.com.zupacademy.webservice_propostas.shared.Log;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
+import feign.FeignException;
 
 @RestController
 @Validated	
@@ -61,7 +62,7 @@ public class NovaPropostaController {
 			
 			return ResponseEntity.created(uri).build();
 			
-		} catch (Exception e) {
+		} catch (FeignException e) {
 			e.printStackTrace();
 			transaction.removeEComita(proposta);
 			return ResponseEntity.status(500).body(new Erro("Houve um erro no processamento do sistema. Tente novamente."));

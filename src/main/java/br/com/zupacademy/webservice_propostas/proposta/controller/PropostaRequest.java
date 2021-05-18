@@ -17,7 +17,7 @@ public class PropostaRequest {
 	
 	@NotBlank @ValidaCPFOuCNPJ
 	@Pattern(regexp = "[\\s]*[0-9]*[1-9]+")
-	//@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
+	@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
 	private String documento;
 	
 	@NotBlank @Email

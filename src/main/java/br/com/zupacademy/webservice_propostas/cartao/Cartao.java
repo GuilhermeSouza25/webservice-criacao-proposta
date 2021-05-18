@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -35,6 +37,9 @@ public class Cartao {
 	private String titular;
 	@Positive
 	private BigDecimal limite;
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private StatusCartao status = StatusCartao.ATIVO;
 	
 	@Valid
 	@OneToOne(mappedBy = "cartao", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
@@ -55,5 +60,13 @@ public class Cartao {
 	
 	public String getId() {
 		return numero;
+	}
+	
+	public String getNumero() {
+		return numero;
+	}
+	
+	public void alteraStatus(StatusCartao status) {
+		this.status = status;
 	}
 }
