@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.zupacademy.webservice_propostas.config.metrics.CustomMetrics;
 import br.com.zupacademy.webservice_propostas.proposta.EstadoProposta;
 import br.com.zupacademy.webservice_propostas.proposta.Proposta;
 import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.AnaliseFinanceiraClient;
@@ -34,6 +35,7 @@ public class NovaPropostaController {
 	
 	@Autowired private ExecutorTransacao transaction;
 	@Autowired private AnaliseFinanceiraClient analiseFinanceiraClient;
+	@Autowired private CustomMetrics metrics;
 	
 	private final Logger logger = LoggerFactory.getLogger(Log.class);
 	
@@ -59,6 +61,7 @@ public class NovaPropostaController {
 			}
 			
 			transaction.atualizaEComita(proposta);
+			metrics.contadorPropostas();
 			
 			return ResponseEntity.created(uri).build();
 			
