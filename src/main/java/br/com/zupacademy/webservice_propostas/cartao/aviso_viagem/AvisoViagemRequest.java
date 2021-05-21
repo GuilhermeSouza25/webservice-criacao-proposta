@@ -9,6 +9,8 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import br.com.zupacademy.webservice_propostas.cartao.Cartao;
+
 public class AvisoViagemRequest {
 	
 	@NotBlank
@@ -31,5 +33,9 @@ public class AvisoViagemRequest {
 	
 	public LocalDate getValidoAte() {
 		return validoAte;
+	}
+
+	public AvisoViagem converter(@NotBlank String ip, @NotBlank String userAgent, Cartao cartao) {
+		return new AvisoViagem(ip, userAgent, cartao, destino, validoAte);
 	}
 }	

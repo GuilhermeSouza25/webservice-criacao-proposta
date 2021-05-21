@@ -40,7 +40,6 @@ public class AvisoViagemController {
 			@RequestHeader(name = "User-Agent", required = true) @NotBlank String userAgent,
 			@RequestHeader(name = "X-Forwarded-For", required = true) @NotBlank String ip) {
 	
-		
 		List<Cartao> lista = manager
 				.createQuery("SELECT p.cartao FROM Proposta p WHERE p.cartao.id = :id AND p.email = :email", Cartao.class)
 				.setParameter("id", id)
@@ -56,7 +55,7 @@ public class AvisoViagemController {
 			return ResponseEntity.status(e.status()).body(new Erro("Já existe um aviso para esta data"));
 		}
 		
-		AvisoViagem aviso = new AvisoViagem(ip, userAgent, cartao);
+		AvisoViagem aviso = avisoRequest.converter(ip, userAgent, cartao);
 		transacao.salvaEComita(aviso);
 		
 		return ResponseEntity.ok().build();

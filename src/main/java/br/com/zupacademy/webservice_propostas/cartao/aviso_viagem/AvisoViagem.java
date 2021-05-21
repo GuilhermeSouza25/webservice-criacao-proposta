@@ -1,5 +1,6 @@
 package br.com.zupacademy.webservice_propostas.cartao.aviso_viagem;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -26,14 +27,20 @@ public class AvisoViagem {
 	
 	private String userAgent;
 	
+	private String destino;
+	
+	private LocalDate validade;
+	
 	@ManyToOne
 	private Cartao cartao;
 	
-	public AvisoViagem(String ipCliente, String userAgent, Cartao cartao) {
+	public AvisoViagem(String ipCliente, String userAgent, Cartao cartao, String destino, LocalDate validade) {
 		super();
 		this.ipCliente = ipCliente;
 		this.userAgent = userAgent;
 		this.cartao = cartao;
+		this.destino = destino;
+		this.validade = validade;
 	}
 	
 	
