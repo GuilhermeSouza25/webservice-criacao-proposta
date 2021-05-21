@@ -6,7 +6,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
 import br.com.zupacademy.webservice_propostas.proposta.Proposta;
@@ -16,8 +15,7 @@ import br.com.zupacademy.webservice_propostas.shared.validators.UniqueValue;
 public class PropostaRequest {
 	
 	@NotBlank @ValidaCPFOuCNPJ
-	@Pattern(regexp = "[\\s]*[0-9]*[1-9]+")
-	//@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
+	@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
 	private String documento;
 	
 	@NotBlank @Email

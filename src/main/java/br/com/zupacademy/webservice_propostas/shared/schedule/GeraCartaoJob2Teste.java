@@ -1,3 +1,4 @@
+package br.com.zupacademy.webservice_propostas.shared.schedule;
 //package br.com.zupacademy.webservice_propostas.proposta.schedule;
 //
 //import java.util.Collection;

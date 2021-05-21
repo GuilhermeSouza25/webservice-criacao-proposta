@@ -6,7 +6,6 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import io.micrometer.core.instrument.MeterRegistry;
@@ -42,14 +41,14 @@ public class GaugeMetrics {
         strings.add(UUID.randomUUID().toString());
     }
     
-//    @Scheduled(fixedDelay = 1000)
-//    public void simulandoGauge() {
-//        double randomNumber = random.nextInt();
-//        if (randomNumber % 2 == 0) {
-//            addString();
-//        } else {
-//        	removeString();
-//        }
-//    }
+    //@Scheduled(fixedDelay = 1000)
+    public void simulandoGauge() {
+        double randomNumber = random.nextInt();
+        if (randomNumber % 2 == 0) {
+            addString();
+        } else {
+        	removeString();
+        }
+    }
 
 }

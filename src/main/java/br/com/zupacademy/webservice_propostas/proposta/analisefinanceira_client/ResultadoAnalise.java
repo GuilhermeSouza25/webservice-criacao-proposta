@@ -1,5 +1,7 @@
 package br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client;
 
+import br.com.zupacademy.webservice_propostas.proposta.EstadoProposta;
+
 public class ResultadoAnalise {
 	
 	private String documento;
@@ -21,5 +23,9 @@ public class ResultadoAnalise {
 
 	public String getIdProposta() {
 		return idProposta;
+	}
+
+	public EstadoProposta getEstadoProposta() {
+		return resultadoSolicitacao.getEstadoProposta();
 	}
 }

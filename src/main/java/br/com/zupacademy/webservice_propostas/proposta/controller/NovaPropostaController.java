@@ -20,19 +20,19 @@ import br.com.zupacademy.webservice_propostas.config.metrics.CustomMetrics;
 import br.com.zupacademy.webservice_propostas.proposta.EstadoProposta;
 import br.com.zupacademy.webservice_propostas.proposta.Proposta;
 import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.AnaliseFinanceiraClient;
+import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.ResultadoAnalise;
 import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.SolicitacaoAnalise;
-import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.StatusAnalise;
 import br.com.zupacademy.webservice_propostas.shared.ExecutorTransacao;
 import br.com.zupacademy.webservice_propostas.shared.Log;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
-import feign.FeignException;
+import feign.FeignException.FeignClientException;
+import feign.FeignException.FeignServerException;
 
 @RestController
 @Validated	
 public class NovaPropostaController {
 	
 	@PersistenceContext private EntityManager manager;
-	
 	@Autowired private ExecutorTransacao transaction;
 	@Autowired private AnaliseFinanceiraClient analiseFinanceiraClient;
 	@Autowired private CustomMetrics metrics;
@@ -47,28 +47,24 @@ public class NovaPropostaController {
 		Proposta proposta = propostaRequest.converter();
 		transaction.salvaEComita(proposta);
 		
-		logger.info("Proposta criada");
-		URI uri = uriBuilder.path("/proposta/{id}").buildAndExpand(proposta.getId()).toUri();
-		
 		try {
-			SolicitacaoAnalise solicitacaoAnalise = new SolicitacaoAnalise(proposta);
-			StatusAnalise status = analiseFinanceiraClient.solicitaAnalise(solicitacaoAnalise).getResultadoSolicitacao();
+			ResultadoAnalise resultadoAnalise = analiseFinanceiraClient.solicitaAnalise(new SolicitacaoAnalise(proposta));
+			EstadoProposta estadoProposta = resultadoAnalise.getEstadoProposta();
 			
-			if(status.equals(StatusAnalise.SEM_RESTRICAO)) {
-				proposta.alteraEstado(EstadoProposta.ELEGIVEL);
-			} else {
-				proposta.alteraEstado(EstadoProposta.NAO_ELEGIVEL);
-			}
+			proposta.alteraEstado(estadoProposta);
 			
-			transaction.atualizaEComita(proposta);
-			metrics.contadorPropostas();
+		} catch (FeignClientException e) {
+			proposta.alteraEstado(EstadoProposta.NAO_ELEGIVEL);
 			
-			return ResponseEntity.created(uri).build();
-			
-		} catch (FeignException e) {
-			e.printStackTrace();
+		} catch (FeignServerException e) {
 			transaction.removeEComita(proposta);
-			return ResponseEntity.status(500).body(new Erro("Houve um erro no processamento do sistema. Tente novamente."));
+			return ResponseEntity.status(e.status()).body(new Erro("Houve um erro no processamento do sistema. Tente novamente."));
 		}
+		transaction.atualizaEComita(proposta);
+		logger.info("Proposta criada");
+		metrics.contadorPropostas();
+		
+		URI uri = uriBuilder.path("/proposta/{id}").buildAndExpand(proposta.getId()).toUri();
+		return ResponseEntity.created(uri).build();
 	}
 }

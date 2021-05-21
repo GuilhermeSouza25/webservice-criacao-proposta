@@ -1,4 +1,4 @@
-package br.com.zupacademy.webservice_propostas.biometria;
+package br.com.zupacademy.webservice_propostas.cartao.biometria;
 
 import java.net.URI;
 

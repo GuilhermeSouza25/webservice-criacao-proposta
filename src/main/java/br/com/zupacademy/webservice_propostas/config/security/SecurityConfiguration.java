@@ -14,15 +14,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
 		http.authorizeRequests(authorizeRequests -> {
 			
 				authorizeRequests
+					.antMatchers(HttpMethod.POST, "/propostas").permitAll()
 					.antMatchers(HttpMethod.GET, "/actuator/**").hasRole("admin")
 					.anyRequest().authenticated();
 			
 		}).oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(
                 jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())));
+		http.csrf().disable();
 	}
 	
 	private Converter<Jwt, ? extends AbstractAuthenticationToken> jwtAuthenticationConverter() {
@@ -30,9 +31,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         jwtConverter.setJwtGrantedAuthoritiesConverter(new KeycloakRealmRoleConverter());
         return jwtConverter;
     }
-	
+
 //	@Bean
 //    JwtDecoder jwtDecoder() {
 //        return NimbusJwtDecoder.withJwkSetUri(jwkSetUri).build();
 //    }
+	
 }
