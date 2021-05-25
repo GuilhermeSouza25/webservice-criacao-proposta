@@ -23,20 +23,21 @@ import br.com.zupacademy.webservice_propostas.cartao.cartao_client.CartaoClient;
 import br.com.zupacademy.webservice_propostas.shared.ExecutorTransacao;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
 import feign.FeignException.FeignClientException;
+import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
-@RequestMapping("propostas/cartoes/")
+@RequestMapping("propostas")
 public class AvisoViagemController {
 	
 	@PersistenceContext EntityManager manager;
 	@Autowired CartaoClient cartaoClient;
 	@Autowired ExecutorTransacao transacao;
 	
-	@PostMapping("{id}/avisos")
+	@PostMapping("/cartoes/{id}/avisos")
 	public ResponseEntity<?> cadastrarAviso(
 			@RequestBody @Valid AvisoViagemRequest avisoRequest,
 			@PathVariable(name = "id", required = true) @NotBlank String id,
-			@AuthenticationPrincipal Jwt jwt,
+			@Parameter(hidden = true) @AuthenticationPrincipal Jwt jwt,
 			@RequestHeader(name = "User-Agent", required = true) @NotBlank String userAgent,
 			@RequestHeader(name = "X-Forwarded-For", required = true) @NotBlank String ip) {
 	

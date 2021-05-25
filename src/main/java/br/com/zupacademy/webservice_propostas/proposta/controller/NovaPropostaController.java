@@ -9,10 +9,12 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -25,11 +27,17 @@ import br.com.zupacademy.webservice_propostas.proposta.analisefinanceira_client.
 import br.com.zupacademy.webservice_propostas.shared.ExecutorTransacao;
 import br.com.zupacademy.webservice_propostas.shared.Log;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
+import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.ErroFormulario;
 import feign.FeignException.FeignClientException;
 import feign.FeignException.FeignServerException;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
-@Validated	
+@Validated
+@RequestMapping("/propostas")
 public class NovaPropostaController {
 	
 	@PersistenceContext private EntityManager manager;
@@ -39,7 +47,13 @@ public class NovaPropostaController {
 	
 	private final Logger logger = LoggerFactory.getLogger(Log.class);
 	
-	@PostMapping("/propostas")
+	@ApiResponses({
+		@ApiResponse(responseCode = "201", description = "Proposta criada"),
+		@ApiResponse(responseCode = "422", description = "Documento duplicado", 
+				content = { @Content(schema = @Schema(implementation = ErroFormulario.class)) })
+	})
+	@PostMapping
+	@CacheEvict(cacheNames = "listaDePropostas", allEntries = true)
 	public ResponseEntity<?> cadastrar(
 			@RequestBody @Valid PropostaRequest propostaRequest,
 			UriComponentsBuilder uriBuilder) {
@@ -50,7 +64,7 @@ public class NovaPropostaController {
 		try {
 			ResultadoAnalise resultadoAnalise = analiseFinanceiraClient.solicitaAnalise(new SolicitacaoAnalise(proposta));
 			EstadoProposta estadoProposta = resultadoAnalise.getEstadoProposta();
-			
+
 			proposta.alteraEstado(estadoProposta);
 			
 		} catch (FeignClientException e) {
@@ -64,7 +78,7 @@ public class NovaPropostaController {
 		logger.info("Proposta criada");
 		metrics.contadorPropostas();
 		
-		URI uri = uriBuilder.path("/proposta/{id}").buildAndExpand(proposta.getId()).toUri();
+		URI uri = uriBuilder.path("/propostas/{id}").buildAndExpand(proposta.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 }

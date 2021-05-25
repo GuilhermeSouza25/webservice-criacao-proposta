@@ -91,6 +91,7 @@ public class Proposta {
 	 * do sistema de cartão.
 	 * @param cartao
 	 */
+	
 	public void associarCartao(Cartao cartao) {
 		this.cartao = cartao;
 	}

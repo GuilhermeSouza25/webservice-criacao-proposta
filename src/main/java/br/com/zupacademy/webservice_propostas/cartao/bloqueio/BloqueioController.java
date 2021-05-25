@@ -28,9 +28,10 @@ import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
 import feign.FeignException.FeignClientException;
 import feign.FeignException.FeignServerException;
 import io.micrometer.core.annotation.Timed;
+import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
-@RequestMapping("/propostas/cartoes")
+@RequestMapping("/propostas")
 @Validated
 @Timed(value = "proposta_cartao_bloqueio")
 public class BloqueioController {
@@ -42,10 +43,10 @@ public class BloqueioController {
 	@Autowired CartaoClient cartaoClient;
 	@Autowired ExecutorTransacao transacao;
 	
-	@PostMapping("/{id}/bloqueios")	
+	@PostMapping("/cartoes/{id}/bloqueios")	
 	public ResponseEntity<?> bloquear(
 			@PathVariable(name = "id", required = true) @NotBlank String id, 
-			@AuthenticationPrincipal Jwt jwt,
+			@Parameter(hidden = true) @AuthenticationPrincipal Jwt jwt,
 			@RequestHeader(name = "User-Agent", required = true) @NotBlank String userAgent,
 			HttpServletRequest request) {
 	

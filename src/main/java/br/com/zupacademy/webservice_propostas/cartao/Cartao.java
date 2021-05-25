@@ -59,7 +59,7 @@ public class Cartao {
 	}
 	
 	public String getId() {
-		return numero;
+		return id;
 	}
 	
 	public String getNumero() {

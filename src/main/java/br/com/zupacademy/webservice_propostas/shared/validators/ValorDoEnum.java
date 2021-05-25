@@ -16,27 +16,26 @@ import javax.validation.Payload;
 
 @Target({ FIELD, METHOD, PARAMETER, ANNOTATION_TYPE, TYPE_USE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = UniqueValueValidator.class)
+@Constraint(validatedBy = ValorDoEnumValidator.class)
 @Documented
 //@Repeatable(List.class)
-public @interface UniqueValue {
-
-    String message() default "não pode ser repetido";
+public @interface ValorDoEnum {
+	
+	Class<? extends Enum<?>> enumClass();
+	
+    String message() default "não é um valor válido";
             
     Class<?>[] groups() default { };
 
     Class<? extends Payload>[] payload() default { };
     
-    String fieldName();
-    
-    Class<?> domainClass();
-    
     //String message();
-
+    
     @Target({ FIELD, METHOD, PARAMETER, ANNOTATION_TYPE })
     @Retention(RUNTIME)
     @Documented
     @interface List {
-    	UniqueValue[] value();
+    	ValorDoEnum[] value();
     }
 }
+

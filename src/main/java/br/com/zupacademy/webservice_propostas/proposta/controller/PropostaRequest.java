@@ -15,7 +15,7 @@ import br.com.zupacademy.webservice_propostas.shared.validators.UniqueValue;
 public class PropostaRequest {
 	
 	@NotBlank @ValidaCPFOuCNPJ
-	@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
+	//@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
 	private String documento;
 	
 	@NotBlank @Email

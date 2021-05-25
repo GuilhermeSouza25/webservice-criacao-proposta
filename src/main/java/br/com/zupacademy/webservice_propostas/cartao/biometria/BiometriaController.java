@@ -17,13 +17,14 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.zupacademy.webservice_propostas.cartao.Cartao;
 
-
 @RestController
+@RequestMapping("/propostas")
 public class BiometriaController {
 	
 	@Autowired SmartValidator validator;

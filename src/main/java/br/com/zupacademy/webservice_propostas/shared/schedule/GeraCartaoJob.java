@@ -1,15 +1,12 @@
 package br.com.zupacademy.webservice_propostas.shared.schedule;
 
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +25,7 @@ public class GeraCartaoJob {
 	@Autowired ExecutorTransacao executorTransacao;
 	
 	@Scheduled(fixedRateString = "${periodicidade.gera-cartao}")
+	@CacheEvict(cacheNames = "listaDePropostas", allEntries = true)
 	public void verifica() {
 		
 		List<Proposta> propostas = manager
@@ -42,18 +40,11 @@ public class GeraCartaoJob {
 		}
 	}
 	
-	private void associaCartao(Proposta proposta) {
+	public void associaCartao(Proposta proposta) {
 		CartaoResponse cartaoResponse = cartaoClient.buscaCartaoGerado(proposta.getId().toString());
 		Cartao cartao = cartaoResponse.converter();
 		
 		proposta.associarCartao(cartao);
 		executorTransacao.atualizaEComita(proposta);
-	}
-
-	@Transactional
-	public Map<Long, Proposta> buscaPropostasSemCartao() {
-		return manager
-				.createQuery("SELECT p FROM Proposta p WHERE p.cartao IS NULL", Proposta.class)
-				.getResultStream().collect(Collectors.toMap(Proposta::getId, Function.identity()));
 	}
 }
