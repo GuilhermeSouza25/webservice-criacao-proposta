@@ -24,11 +24,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.zupacademy.webservice_propostas.cartao.Cartao;
 import br.com.zupacademy.webservice_propostas.cartao.cartao_client.CartaoClient;
-import br.com.zupacademy.webservice_propostas.proposta.Proposta;
 import br.com.zupacademy.webservice_propostas.shared.ExecutorTransacao;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
-import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.ErroFormulario;
-import br.com.zupacademy.webservice_propostas.shared.validators.ExistsId;
 import br.com.zupacademy.webservice_propostas.shared.validators.ValorDoEnum;
 import feign.FeignException.FeignClientException;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -51,7 +48,7 @@ public class CarteiraController {
 	public ResponseEntity<?> solicitaInclusao(
 			@PathVariable(name = "id") String id,
 			@Parameter(hidden = true) @AuthenticationPrincipal Jwt jwt,
-			@RequestParam @ValorDoEnum(enumClass = Carteiras.class) @NotNull String carteira,
+			@RequestParam @ValorDoEnum(enumClass = CarteirasEnum.class) @NotNull String carteira,
 			UriComponentsBuilder uriBuilder) {
 		
 		String email = jwt.getClaimAsString("email");
