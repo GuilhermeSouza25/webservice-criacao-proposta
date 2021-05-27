@@ -23,7 +23,7 @@ public class CustomMetrics {
         tags.add(Tag.of("emissora", "Mastercard"));
         tags.add(Tag.of("banco", "Itaú"));
 
-        Counter contadorDePropostasCriadas = this.meterRegistry.counter("proposta_criada", tags);
+        Counter contadorDePropostasCriadas = this.meterRegistry.counter("total_propostas_criadas", tags);
         
         contadorDePropostasCriadas.increment();
     }

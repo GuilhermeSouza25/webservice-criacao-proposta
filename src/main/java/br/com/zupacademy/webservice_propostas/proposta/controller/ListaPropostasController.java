@@ -39,7 +39,7 @@ public class ListaPropostasController {
 	@GetMapping("/listar_pageable")
 	@Cacheable(cacheNames = "listaDePropostas")
 	//@PageableAsQueryParam
-	public ResponseEntity<Page<PropostaResponse>> listarPageable(
+	public ResponseEntity<Page<PropostaResponse>> listarPropostasPageable(
 			@ParameterObject 
 			@Parameter(hidden = true) 
 			@PageableDefault(page = 0, size = 5) Pageable paginacao) {
@@ -52,7 +52,7 @@ public class ListaPropostasController {
 	}
 	
 	@GetMapping("/listar_manager")
-	public ResponseEntity<List<PropostaResponse>> listarManager(
+	public ResponseEntity<List<PropostaResponse>> listarPropostasManager(
 			@RequestParam(required = true) Integer pagina, 
 			@RequestParam(required = true) Integer quantidade) {
 		

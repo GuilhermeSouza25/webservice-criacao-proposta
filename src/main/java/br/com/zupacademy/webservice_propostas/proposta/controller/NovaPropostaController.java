@@ -30,6 +30,8 @@ import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.ErroFormulario;
 import feign.FeignException.FeignClientException;
 import feign.FeignException.FeignServerException;
+import io.opentracing.Span;
+import io.opentracing.Tracer;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -44,6 +46,7 @@ public class NovaPropostaController {
 	@Autowired private ExecutorTransacao transaction;
 	@Autowired private AnaliseFinanceiraClient analiseFinanceiraClient;
 	@Autowired private CustomMetrics metrics;
+	@Autowired private Tracer tracer;
 	
 	private final Logger logger = LoggerFactory.getLogger(Log.class);
 	
@@ -54,12 +57,15 @@ public class NovaPropostaController {
 	})
 	@PostMapping
 	@CacheEvict(cacheNames = "listaDePropostas", allEntries = true)
-	public ResponseEntity<?> cadastrar(
+	public ResponseEntity<?> novaProposta(
 			@RequestBody @Valid PropostaRequest propostaRequest,
 			UriComponentsBuilder uriBuilder) {
 		
 		Proposta proposta = propostaRequest.converter();
 		transaction.salvaEComita(proposta);
+		
+		Span activeSpan = tracer.activeSpan();
+		activeSpan.setBaggageItem("user.email", proposta.getEmail());
 		
 		try {
 			ResultadoAnalise resultadoAnalise = analiseFinanceiraClient.solicitaAnalise(new SolicitacaoAnalise(proposta));
@@ -75,6 +81,7 @@ public class NovaPropostaController {
 			return ResponseEntity.status(e.status()).body(new Erro("Houve um erro no processamento do sistema. Tente novamente."));
 		}
 		transaction.atualizaEComita(proposta);
+		
 		logger.info("Proposta criada");
 		metrics.contadorPropostas();
 		

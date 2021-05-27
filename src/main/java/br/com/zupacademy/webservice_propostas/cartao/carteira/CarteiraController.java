@@ -28,6 +28,8 @@ import br.com.zupacademy.webservice_propostas.shared.ExecutorTransacao;
 import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
 import br.com.zupacademy.webservice_propostas.shared.validators.ValorDoEnum;
 import feign.FeignException.FeignClientException;
+import io.opentracing.Span;
+import io.opentracing.Tracer;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -41,6 +43,7 @@ public class CarteiraController {
 	@PersistenceContext EntityManager manager;
 	@Autowired CartaoClient cartaoClient;
 	@Autowired ExecutorTransacao transacao;
+	@Autowired Tracer tracer;
 	
 	@ApiResponse(responseCode = "422", description = "Cartão já associado à carteira", 
 			content = { @Content(schema = @Schema(implementation = Erro.class)) })
@@ -53,6 +56,9 @@ public class CarteiraController {
 		
 		String email = jwt.getClaimAsString("email");
 		Assert.state(email != null, "Email não está presente no token de autenticação");
+		
+		Span activeSpan = tracer.activeSpan();
+		activeSpan.setTag("user.email", email);
 		
 		List<Cartao> lista = manager
 			.createQuery("SELECT p.cartao FROM Proposta p WHERE p.cartao.id = :id AND p.email = :email", Cartao.class)

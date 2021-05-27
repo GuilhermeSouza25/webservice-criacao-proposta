@@ -24,7 +24,7 @@ public class DetalhaPropostaController {
 	@PersistenceContext private EntityManager manager;
 	
 	@GetMapping("/{id}") 
-	public ResponseEntity<?> detalhar(
+	public ResponseEntity<?> detalharProposta(
 			@Pattern(regexp = "[\\s]*[0-9]*[1-9]+",message="ID da proposta inválido. Informe um valor numérico positivo")
 			@PathVariable("id") String id) {
 			

@@ -26,7 +26,7 @@ public class GeraCartaoJob {
 	
 	@Scheduled(fixedRateString = "${periodicidade.gera-cartao}")
 	@CacheEvict(cacheNames = "listaDePropostas", allEntries = true)
-	public void verifica() {
+	public void verificaPropostasSemCartao() {
 		
 		List<Proposta> propostas = manager
 				.createQuery("SELECT p FROM Proposta p WHERE p.cartao IS NULL AND p.estado = :estado", Proposta.class)

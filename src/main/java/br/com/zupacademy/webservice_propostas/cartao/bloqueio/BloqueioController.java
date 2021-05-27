@@ -28,6 +28,8 @@ import br.com.zupacademy.webservice_propostas.shared.exceptionhandler.Erro;
 import feign.FeignException.FeignClientException;
 import feign.FeignException.FeignServerException;
 import io.micrometer.core.annotation.Timed;
+import io.opentracing.Span;
+import io.opentracing.Tracer;
 import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
@@ -42,6 +44,7 @@ public class BloqueioController {
 	@PersistenceContext EntityManager manager;
 	@Autowired CartaoClient cartaoClient;
 	@Autowired ExecutorTransacao transacao;
+	@Autowired private Tracer tracer;
 	
 	@PostMapping("/cartoes/{id}/bloqueios")	
 	public ResponseEntity<?> bloquear(
@@ -49,11 +52,16 @@ public class BloqueioController {
 			@Parameter(hidden = true) @AuthenticationPrincipal Jwt jwt,
 			@RequestHeader(name = "User-Agent", required = true) @NotBlank String userAgent,
 			HttpServletRequest request) {
-	
+		
+		String email = jwt.getClaimAsString("email");
+		
+		Span activeSpan = tracer.activeSpan();
+		activeSpan.setTag("user.email", email);
+		
 		List<Cartao> lista = manager
 				.createQuery("SELECT p.cartao FROM Proposta p WHERE p.cartao.id = :id AND p.email = :email", Cartao.class)
 				.setParameter("id", id)
-				.setParameter("email", jwt.getClaimAsString("email"))
+				.setParameter("email", email)
 				.getResultList();
 		
 		if(lista.isEmpty()) return ResponseEntity.notFound().build();
