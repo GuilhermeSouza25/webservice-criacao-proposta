@@ -31,7 +31,7 @@ import org.hibernate.validator.constraints.br.CPF;
 //@Repeatable(List.class)
 public @interface ValidaCPFOuCNPJ {
 
-    String message() default "Already taken. Choose a different one";
+    String message() default "documento em formato inválido";
             
     Class<?>[] groups() default { };
 

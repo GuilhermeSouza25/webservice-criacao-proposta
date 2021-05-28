@@ -11,12 +11,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
-
-import com.sun.istack.NotNull;
 
 import br.com.zupacademy.webservice_propostas.cartao.Cartao;
 
@@ -26,7 +26,7 @@ public class Proposta {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty @NotBlank @ValidaCPFOuCNPJ
+	@NotEmpty @NotBlank
 	private String documento;
 	
 	@NotEmpty @NotBlank @Email
@@ -50,9 +50,9 @@ public class Proposta {
 	@Deprecated
 	public Proposta() {}
 	
-	public Proposta(@NotEmpty @NotBlank @ValidaCPFOuCNPJ String documento, @NotEmpty @NotBlank @Email String email,
+	public Proposta(@NotEmpty @NotBlank @Valid @NotNull DocumentoLimpo documento, @NotEmpty @NotBlank @Email String email,
 			@NotEmpty @NotBlank String nome, @NotEmpty @NotBlank String endereco, @Positive BigDecimal salario) {
-		this.documento = documento;
+		this.documento = documento.encrypt();
 		this.email = email;
 		this.nome = nome;
 		this.endereco = endereco;

@@ -8,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
+import br.com.zupacademy.webservice_propostas.proposta.DocumentoLimpo;
 import br.com.zupacademy.webservice_propostas.proposta.Proposta;
 import br.com.zupacademy.webservice_propostas.proposta.ValidaCPFOuCNPJ;
 import br.com.zupacademy.webservice_propostas.shared.validators.UniqueValue;
@@ -15,7 +16,7 @@ import br.com.zupacademy.webservice_propostas.shared.validators.UniqueValue;
 public class PropostaRequest {
 	
 	@NotBlank @ValidaCPFOuCNPJ
-	//@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
+	@UniqueValue(domainClass = Proposta.class, fieldName = "documento")
 	private String documento;
 	
 	@NotBlank @Email
@@ -60,7 +61,7 @@ public class PropostaRequest {
 	}
 
 	public Proposta converter() {
-		return new Proposta(documento, email, nome, endereco, salario);
+		return new Proposta(new DocumentoLimpo(documento), email, nome, endereco, salario);
 	}
 	
 	

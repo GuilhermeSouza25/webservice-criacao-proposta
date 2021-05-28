@@ -29,8 +29,4 @@ public class PropostasApplication {
 	    messageSource.setBasename("classpath:messages");
 	    return messageSource;
 	}
-	
-	
-	
-
 }
