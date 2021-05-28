@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.com.zupacademy</groupId>
 	<artifactId>propostas</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>webservice_proposta</name>
 	<description>microserviço de criação de propostas</description>
 	<properties>

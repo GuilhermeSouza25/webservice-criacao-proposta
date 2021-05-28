@@ -19,7 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests(authorizeRequests -> {
 				authorizeRequests
 					.antMatchers(HttpMethod.POST, "/propostas").permitAll()
-					.antMatchers(HttpMethod.GET, "/actuator/**").hasRole("admin")
+					.antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
 					.anyRequest().authenticated();
 			
 		}).oauth2ResourceServer(oauth2ResourceServer -> oauth2ResourceServer.jwt(
